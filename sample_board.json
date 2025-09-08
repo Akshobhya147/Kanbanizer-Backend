@@ -1,0 +1,73 @@
+{
+  "board_id": "",
+  "board_name": "Sample Board",
+  "board_creation_date": -1,
+  "items": [
+    {
+      "id": "",
+      "name": "Buy Groceries from Tesco",
+      "description": "Grab below items:\nMilk (1 Gallon)\nBacon\nEggs\nCereal\nDetergent\nCheddar\nCoke\nCelery, Potatoes, Beans, Broccoli, Lettuce, Eggplant, Peas\nMunchies ;)",
+      "type": "Pending",
+      "order": 1,
+      "createdAt": -1,
+      "deleted": false,
+      "deletePermanently": false,
+      "board_id": ""
+    },
+    {
+      "id": "",
+      "name": "LAUNDRY!!!!!!!!!!!!!!!!!!!",
+      "description": "Blud, gotta do laundry this weekend!",
+      "type": "Pending",
+      "order": 1,
+      "createdAt": -1,
+      "deleted": false,
+      "deletePermanently": false,
+      "board_id": ""
+    },
+    {
+      "id": "",
+      "name": "Soccer practice SUNDAY",
+      "description": "",
+      "type": "Pending",
+      "order": 1,
+      "createdAt": -1,
+      "deleted": false,
+      "deletePermanently": false,
+      "board_id": ""
+    },
+    {
+      "id": "",
+      "name": "CN paper due!",
+      "description": "Computer Networks paper due on Friday.\nTopic: Design network infrastructure for a popular online service/game of your choice.\n\nPS: Try designing for Fortnite",
+      "type": "InProgress",
+      "order": 1,
+      "createdAt": -1,
+      "deleted": false,
+      "deletePermanently": false,
+      "board_id": ""
+    },
+    {
+      "id": "",
+      "name": "Friday night out!!",
+      "description": "Friday night at Gill's home. 10:00 stat!",
+      "type": "InProgress",
+      "order": 1,
+      "createdAt": -1,
+      "deleted": false,
+      "deletePermanently": false,
+      "board_id": ""
+    },
+    {
+      "id": "",
+      "name": "Talk to Shaili",
+      "description": "Grow up and sort things out!",
+      "type": "Completed",
+      "order": 1,
+      "createdAt": -1,
+      "deleted": false,
+      "deletePermanently": false,
+      "board_id": ""
+    }
+  ]
+}
