@@ -21,7 +21,7 @@ def get_database(dbname):
     database=AsyncMongoClient(os.getenv('MONGO_DB'))[dbname]
     return database
 
-database=get_database('taskmanager')
+database=get_database(os.getenv('DB_NAME'))
 
 async def check_account(userID:str,userEmail:str,userName:str,picture:str):
     users_collection=None
