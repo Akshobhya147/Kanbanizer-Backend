@@ -31,5 +31,8 @@ def verify_token(token:str):
         return [False,str(e)]
 
 def extractJWT(request:Request):
-    token=request.cookies['session_token']
-    return token
+    try:
+        token=request.cookies['session_token']
+        return token
+    except Exception as e:
+        raise e
