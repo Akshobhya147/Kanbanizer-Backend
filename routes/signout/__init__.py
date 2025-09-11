@@ -29,7 +29,7 @@ async def signout():
     response=JSONResponse(content={"status":"success","info":"signed out successfully."},status_code=200)
     response.set_cookie(
         key="session_token",
-        value=our_token,
+        value='',
         httponly=True,
         secure=False if os.getenv('BUILD')=='dev' else True, # secure=True uses https
         samesite="lax",
