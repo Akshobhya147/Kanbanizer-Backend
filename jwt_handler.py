@@ -4,8 +4,15 @@ import os
 import time
 from fastapi.exceptions import HTTPException
 from fastapi import Request
+import logging
 
 load_dotenv()
+
+logger=logging.getLogger(__name__)
+handler = logging.StreamHandler()
+handler.setLevel(logging.INFO)
+handler.setFormatter(logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s'))
+logger.addHandler(handler)
 
 def create_token(user_id,email,time_delta=120):
     expiresAt=time.time()+time_delta # currently, our token is valid only for 120 seconds. Increase this.
@@ -35,4 +42,5 @@ def extractJWT(request:Request):
         token=request.cookies['session_token']
         return token
     except Exception as e:
-        raise e
+        logger.error(f"Some error occured. Error:{str(e)}")
+        return None

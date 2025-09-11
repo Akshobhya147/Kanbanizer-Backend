@@ -13,7 +13,7 @@ logger.addHandler(handler)
 myspacerouter=APIRouter()
 
 @myspacerouter.get('/',tags=['myspace']) # for loading details of user from database
-async def extract_user_info(token=Depends(extractJWT)):
+async def extract_user_info(token:str=Depends(extractJWT)):
     try:
         verify_result:list=verify_token(token)
         if(verify_result):
