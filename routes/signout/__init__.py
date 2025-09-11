@@ -28,5 +28,6 @@ async def signout():
     # Instead, following:
     response=JSONResponse(content={"status":"success","info":"signed out successfully."},status_code=200)
     response.delete_cookie("session_token")
+    response.headers["Cache-Control"]="no-store"
     return response
 
