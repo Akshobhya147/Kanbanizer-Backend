@@ -26,6 +26,18 @@ async def signout():
     # that page (, since, it is not an endpoint) and the browser throws a CORS error.
     # This worked in signin because (my guess) actually, the google's auth system redirected to backend and fetch wasn't used. So, the redirect to myspace happened organically.
     # Instead, following:
+
+    response.set_cookie(
+                key="session_token",
+                value=our_token,
+                httponly=True,
+                secure=True,
+                samesite="none",
+                path='/',
+                max_age=864000,
+            )
+
+    response.headers["Cache-Control"]="no-store"
     response=JSONResponse(content={"status":"success","info":"signed out successfully."},status_code=200)
     response.delete_cookie("session_token")
     response.headers["Cache-Control"]="no-store"

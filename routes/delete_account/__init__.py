@@ -25,12 +25,13 @@ async def account_delete(token=Depends(extractJWT)):
                 key="session_token",
                 value=our_token,
                 httponly=True,
-                secure=False if os.getenv('BUILD')=='dev' else True, # secure=True uses https
-                samesite="lax",
+                secure=True,
+                samesite="none",
                 path='/',
                 max_age=864000,
-                    
             )
+
+            response.headers["Cache-Control"]="no-store"
             return response
         else:
             return {"status":"error","info":"Some issue, either with JWT authentication or cookie."}
