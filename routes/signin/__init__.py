@@ -37,8 +37,8 @@ async def signin_process(
                 key="session_token",
                 value=our_token,
                 httponly=True,
-                secure=False if os.getenv('BUILD')=='dev' else True, # secure=True uses https
-                samesite="lax" if os.getenv('BUILD')=='dev' else "none",
+                secure=True,
+                samesite="none",
                 path='/',
                 max_age=864000,
             )
