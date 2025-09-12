@@ -27,6 +27,8 @@ async def signout():
     # This worked in signin because (my guess) actually, the google's auth system redirected to backend and fetch wasn't used. So, the redirect to myspace happened organically.
     # Instead, following:
 
+
+    response=JSONResponse(content={"status":"success","info":"signed out successfully."},status_code=200)
     response.set_cookie(
                 key="session_token",
                 value=our_token,
@@ -37,9 +39,6 @@ async def signout():
                 max_age=864000,
             )
 
-    response.headers["Cache-Control"]="no-store"
-    response=JSONResponse(content={"status":"success","info":"signed out successfully."},status_code=200)
-    response.delete_cookie("session_token")
     response.headers["Cache-Control"]="no-store"
     return response
 
